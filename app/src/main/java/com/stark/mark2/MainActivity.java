@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private String[] mTitles = {"首页", "专题", "党务", "我的"};
-    private int[] mIconUnselectIds = {
+    private int[] mIconUnSelectIds = {
             R.mipmap.tab_home_unselect, R.mipmap.tab_speech_unselect,
             R.mipmap.tab_contact_unselect, R.mipmap.tab_more_unselect};
     private int[] mIconSelectIds = {
@@ -35,8 +35,9 @@ public class MainActivity extends AppCompatActivity {
         mFragments.add(new HomeFragment());
         mFragments.add(new UserFragment());
         for (int i = 0; i < mTitles.length; i++) {
-            mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
+            mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnSelectIds[i]));
         }
         mTab.setTabData(mTabEntities,this,R.id.main,mFragments);
+
     }
 }
