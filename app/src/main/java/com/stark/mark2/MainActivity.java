@@ -14,13 +14,15 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
 
-    private String[] mTitles = {"首页", "专题", "党务", "我的"};
+    private String[] mTitles = {"首页", "矩衡党建", "专题学习", "党务管理","我的"};
     private int[] mIconUnSelectIds = {
             R.mipmap.tab_home_unselect, R.mipmap.tab_speech_unselect,
-            R.mipmap.tab_contact_unselect, R.mipmap.tab_more_unselect};
+            R.mipmap.tab_contact_unselect, R.mipmap.tab_more_unselect,
+            R.mipmap.tab_more_unselect};
     private int[] mIconSelectIds = {
             R.mipmap.tab_home_select, R.mipmap.tab_speech_select,
-            R.mipmap.tab_contact_select, R.mipmap.tab_more_select};
+            R.mipmap.tab_contact_select, R.mipmap.tab_more_select,
+            R.mipmap.tab_more_select};
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     private CommonTabLayout mTab;
@@ -34,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         mFragments.add(new HomeFragment());
         mFragments.add(new UserFragment());
+        mFragments.add(new HomeFragment());
+        mFragments.add(new UserFragment());
+        mFragments.add(new HomeFragment());
+
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnSelectIds[i]));
         }
