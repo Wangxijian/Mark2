@@ -1,37 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tl="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <FrameLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/tab_layout">
+        android:layout_above="@id/tab">
 
     </FrameLayout>
 
-    <com.flyco.tablayout.CommonTabLayout
-        android:id="@+id/tab_layout"
+    <LinearLayout
+        android:id="@+id/tab"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="#ffffff"
-        tl:tl_iconGravity="TOP"
-        tl:tl_iconHeight="18dp"
-        tl:tl_iconMargin="4dp"
-        tl:tl_iconWidth="18dp"
-        tl:tl_indicator_bounce_enable="false"
-        tl:tl_indicator_color="@color/colorPrimary"
-        tl:tl_indicator_gravity="TOP"
-        tl:tl_textSelectColor="#2C97DE"
-        tl:tl_textUnselectColor="#66000000"
-        tl:tl_textsize="12sp"
-        tl:tl_underline_color="#DDDDDD"
-        tl:tl_underline_gravity="TOP"
-        tl:tl_underline_height="1dp" />
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:id="@+id/tab_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_home"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/home_unselected" />
+
+            <TextView
+                android:id="@+id/text_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="首页"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_party_building"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_party_building"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/party_building_unselected" />
+
+            <TextView
+                android:id="@+id/text_party_building"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="矩衡党建"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_study"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_study"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/study_unselected" />
+
+            <TextView
+                android:id="@+id/text_study"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="专题学习"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_management"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_management"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/management_unselected" />
+
+            <TextView
+                android:id="@+id/text_management"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="党务管理"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_user"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_user"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/user_unselected" />
+
+            <TextView
+                android:id="@+id/text_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="我的"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </RelativeLayout>
+</layout>

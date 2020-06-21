@@ -1,103 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".HomeFragment">
-    <!--标题搜索栏-->
-    <LinearLayout
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:orientation="horizontal"
-        android:padding="6dp"
-        android:weightSum="10">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_weight="3"
-            android:background="#ffffff" />
-
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.home.HomeFragment">
+        <!--标题搜索栏-->
         <LinearLayout
-            android:padding="4dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="7"
-            android:orientation="horizontal">
-
-            <EditText
-                android:background="@drawable/search_edit_text_background"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:cursorVisible="false"
-                android:padding="2dp"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!--新闻标题横向滑动栏-->
-    <HorizontalScrollView
-        android:id="@+id/hs_news_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+
+                android:src="@mipmap/icon_home" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:background="@drawable/news_title_background"
-                android:padding="2dp"
-                android:text="党建要闻"
-                android:textSize="@dimen/sp_16" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:background="@drawable/news_title_background"
-                android:padding="2dp"
-                android:text="行业党建"
-                android:textSize="@dimen/sp_16" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:background="@drawable/news_title_background"
-                android:padding="2dp"
-                android:text="组织动态"
-                android:textSize="@dimen/sp_16" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:background="@drawable/news_title_background"
-                android:padding="2dp"
-                android:text="年度计划"
-                android:textSize="@dimen/sp_16" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:background="@drawable/news_title_background"
-                android:padding="2dp"
-                android:text="普法视频"
-                android:textSize="@dimen/sp_16" />
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="矩衡律所智慧党建平台"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_20"/>
 
         </LinearLayout>
-    </HorizontalScrollView>
 
-    <!--内容页-->
+        <!--新闻标题横向滑动栏-->
+        <com.google.android.material.tabs.TabLayout
+            app:tabMode="scrollable"
+            android:background="@color/white"
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabTextColor="@color/colorPrimary"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-</LinearLayout>
+        </com.google.android.material.tabs.TabLayout>
+
+
+        <!--内容页-->
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.viewpager.widget.ViewPager>
+    </LinearLayout>
+</layout>
