@@ -64,17 +64,22 @@ public class MainActivity extends FragmentActivity {
         list.add(userFragment);
         manager = getSupportFragmentManager();
 
-        FragmentUtils.loadFragmentsTransaction(R.id.main,0,manager,list);
-
         mBinding.tabHome.setOnClickListener(v -> select(0));
         mBinding.tabPartyBuilding.setOnClickListener(v -> select(1));
         mBinding.tabStudy.setOnClickListener(v -> select(2));
         mBinding.tabManagement.setOnClickListener(v -> select(3));
         mBinding.tabUser.setOnClickListener(v -> select(4));
 
+
+        initTab();
     }
 
-    private void initTab() {
+    private void initTab(){
+        changeTab(0);
+        FragmentUtils.loadFragmentsTransaction(R.id.main,0,manager,list);
+    }
+
+    private void clearTab() {
         mBinding.textHome.setTextColor(Utils.getColor(this, R.color.black));
         mBinding.textPartyBuilding.setTextColor(Utils.getColor(this, R.color.black));
         mBinding.textStudy.setTextColor(Utils.getColor(this, R.color.black));
@@ -89,33 +94,46 @@ public class MainActivity extends FragmentActivity {
     }
 
     public void select(int index) {
-
-
-        initTab();
+        clearTab();
+        changeTab(index);
         switch (index) {
             case 0:
                 FragmentUtils.showHideFragmentTransaction(manager, homeFragment);
-               // FragmentUtils.showHideFragmentTransaction(manager, homeFragment);
+                break;
+            case 1:
+                FragmentUtils.showHideFragmentTransaction(manager, partyBuildingFragment);
+                break;
+            case 2:
+                FragmentUtils.showHideFragmentTransaction(manager, studyFragment);
+                break;
+            case 3:
+                FragmentUtils.showHideFragmentTransaction(manager, partyAffairsManagementFragment);
+                break;
+            case 4:
+                FragmentUtils.showHideFragmentTransaction(manager, userFragment);
+                break;
+        }
+    }
+
+    public void changeTab(int index){
+        switch (index){
+            case 0:
                 mBinding.textHome.setTextColor(Utils.getColor(this, R.color.colorPrimary));
                 mBinding.imgHome.setImageResource(R.mipmap.home_selected);
                 break;
             case 1:
-                FragmentUtils.showHideFragmentTransaction(manager, partyBuildingFragment);
                 mBinding.textPartyBuilding.setTextColor(Utils.getColor(this, R.color.colorPrimary));
                 mBinding.imgPartyBuilding.setImageResource(R.mipmap.party_building_selected);
                 break;
             case 2:
-                FragmentUtils.showHideFragmentTransaction(manager, studyFragment);
                 mBinding.textStudy.setTextColor(Utils.getColor(this, R.color.colorPrimary));
                 mBinding.imgStudy.setImageResource(R.mipmap.study_selected);
                 break;
             case 3:
-                FragmentUtils.showHideFragmentTransaction(manager, partyAffairsManagementFragment);
                 mBinding.textManagement.setTextColor(Utils.getColor(this, R.color.colorPrimary));
                 mBinding.imgManagement.setImageResource(R.mipmap.management_selected);
                 break;
             case 4:
-                FragmentUtils.showHideFragmentTransaction(manager, userFragment);
                 mBinding.textUser.setTextColor(Utils.getColor(this, R.color.colorPrimary));
                 mBinding.imgUser.setImageResource(R.mipmap.user_selected);
                 break;
