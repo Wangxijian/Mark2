@@ -13,8 +13,8 @@ import java.util.List;
 public class NewsAdapter extends BaseMultiItemQuickAdapter<News, BaseViewHolder> {
 
     public NewsAdapter() {
-        addItemType(News.TYPE_NO_IMAGE, R.layout.item_news_no_image);
-        addItemType(News.TYPE_NORMAL, R.layout.item_news);
+        addItemType(News.TYPE_IMAGE_NO_IMAGE, R.layout.item_news_no_image);
+        addItemType(News.TYPE_IMAGE_NORMAL, R.layout.item_news);
     }
 
     public NewsAdapter(@Nullable List<News> data) {
@@ -27,13 +27,13 @@ public class NewsAdapter extends BaseMultiItemQuickAdapter<News, BaseViewHolder>
     @Override
     protected void convert(@NotNull BaseViewHolder holder, News news) {
         switch (holder.getItemViewType()) {
-            case News.TYPE_NORMAL:
+            case News.TYPE_IMAGE_NORMAL:
                 holder.setText(R.id.title, news.getNewsTitle());
                 holder.setText(R.id.source, news.getNewsSource());
                 holder.setText(R.id.date, news.getNewsDate());
                 holder.setImageResource(R.id.img, news.getNewsImage());
                 break;
-            case News.TYPE_NO_IMAGE:
+            case News.TYPE_IMAGE_NO_IMAGE:
                 holder.setText(R.id.title, news.getNewsTitle());
                 holder.setText(R.id.source, news.getNewsSource());
                 holder.setText(R.id.date, news.getNewsDate());

@@ -13,8 +13,10 @@ import androidx.fragment.app.Fragment;
 import com.stark.mark2.R;
 import com.stark.mark2.adapter.base.FragmentLazyPagerAdapter;
 import com.stark.mark2.base.LazyFragment;
+import com.stark.mark2.bean.News;
 import com.stark.mark2.databinding.FragmentPartyBuildingBinding;
 import com.stark.mark2.ui.home.fragment.NewsFragment;
+import com.stark.mark2.ui.party_building.fragment.StandardFragment;
 import com.stark.mark2.util.DAOUtils;
 import com.stark.mark2.util.Utils;
 
@@ -42,15 +44,15 @@ public class PartyBuildingFragment extends LazyFragment {
     //初始化TabLayout
     private void initTab() {
         ArrayList<Fragment> fragments = new ArrayList<>();
-        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getAllNews(getContext()), NewsFragment.NO_BANNER));
-        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getAllNews(getContext()), NewsFragment.NO_BANNER));
-        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getAllNews(getContext()), NewsFragment.NO_BANNER));
+        fragments.add(new StandardFragment());
+        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getNewsByType(getContext(), News.TYPE_NEWS_PARTY_BUILDING), NewsFragment.NO_BANNER));
+        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getNewsByType(getContext(), News.TYPE_NEWS_PARTY_BUILDING), NewsFragment.NO_BANNER));
 
 
         ArrayList<String> titles = new ArrayList<>();
-        titles.add("组织介绍");
-        titles.add("党务公开");
-        titles.add("建党先锋");
+        titles.add("十个标准化");
+        titles.add("党建+");
+        titles.add("六坚持");
 
         FragmentLazyPagerAdapter adapter = new FragmentLazyPagerAdapter(getChildFragmentManager(), fragments, titles);
         mBinding.content.setAdapter(adapter);

@@ -30,13 +30,12 @@ public class NewsFragment extends LazyFragment implements OnItemClickListener {
 
     private static final String ARG_DATA_LIST = "ARG_DATA_LIST";
     private static final String ARG_BANNER = "ARG_BANNER";
+
     private FragmentNewsBinding mBinding;
     private View bannerView;
     private Banner<Integer, MyBannerAdapter> banner;
-    private NewsAdapter newsAdapter;
     public static final int NO_BANNER = 0;
     public static final int BANNER = 1;
-    private int type = 0;
     private ArrayList<News> dataList;
 
     public static NewsFragment newInstance(ArrayList<News> dataList, int banner) {
@@ -61,10 +60,9 @@ public class NewsFragment extends LazyFragment implements OnItemClickListener {
     public void init() {
         if (getArguments() != null) {
             dataList = getArguments().getParcelableArrayList(ARG_DATA_LIST);
-            type = getArguments().getInt(ARG_BANNER);
+            int type = getArguments().getInt(ARG_BANNER);
 
-            newsAdapter = new NewsAdapter();
-
+            NewsAdapter newsAdapter = new NewsAdapter();
             mBinding.refreshLayout.setOnLoadMoreListener(refreshLayout -> refreshLayout.finishLoadMore(2000));
             mBinding.refreshLayout.setOnRefreshListener(refreshLayout -> refreshLayout.finishRefresh(2000));
 
@@ -78,17 +76,11 @@ public class NewsFragment extends LazyFragment implements OnItemClickListener {
                 newsAdapter.addHeaderView(bannerView);
                 banner.start();
             }
-
-
             newsAdapter.setOnItemClickListener(this);
-
-            getData();
+            newsAdapter.setList(dataList);
         }
     }
 
-    private void getData() {
-        newsAdapter.setList(dataList);
-    }
 
     @Override
     public void onStop() {
@@ -115,7 +107,8 @@ public class NewsFragment extends LazyFragment implements OnItemClickListener {
         b.putParcelable("News", news);
         Intent i = new Intent(getActivity(), NewsContentActivity.class);
         i.putExtras(b);
-        getActivity().startActivity(i);
-
+        if (null != getActivity()) {
+            getActivity().startActivity(i);
+        }
     }
 }

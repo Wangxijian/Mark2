@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <!--标题搜索栏-->
+        android:orientation="vertical"
+        tools:context=".ui.study.LiangXueYiZuoActivity">
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:orientation="horizontal"
-            android:padding="6dp">
+            android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/img_liang_xue_yi_zuo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@mipmap/study_1" />
+
+            <ImageView
+                android:id="@+id/back"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:padding="12dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:src="@mipmap/back" />
+        </FrameLayout>
 
-                android:src="@mipmap/icon_home" />
-
-            <TextView
-                android:gravity="center_vertical"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:text="矩衡律所智慧党建平台"
-                android:textColor="@color/white"
-                android:textSize="@dimen/sp_20"/>
-
-        </LinearLayout>
-        <!--新闻标题横向滑动栏-->
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab"
             android:layout_width="match_parent"
@@ -50,5 +50,6 @@
             android:layout_height="match_parent">
 
         </androidx.viewpager.widget.ViewPager>
+
     </LinearLayout>
 </layout>

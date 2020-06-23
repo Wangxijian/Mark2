@@ -6,28 +6,59 @@ import android.os.Parcelable;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 
 import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Generated;
 
 @Entity
 public class News implements MultiItemEntity , Parcelable {
-    public static final int TYPE_NORMAL = 0;
-    public static final int TYPE_NO_IMAGE = 1;
+    public static final int TYPE_IMAGE_NORMAL = 0;
+    public static final int TYPE_IMAGE_NO_IMAGE = 1;
+
+    public static final int TYPE_NEWS_HOME = 0;
+    public static final int TYPE_NEWS_PARTY_BUILDING = 1;
+
+
     @Id
-    private long Id;
+    private Long Id;
     private String NewsTitle;
     private int NewsType;
+    private int ImageType;
     private String NewsSource;
     private String NewsDate;
     private String NewsContent;
     private Integer NewsImage;
 
-    @Generated(hash = 1893778754)
-    public News(long Id, String NewsTitle, int NewsType, String NewsSource,
-            String NewsDate, String NewsContent, Integer NewsImage) {
+
+
+
+
+    protected News(Parcel in) {
+        if (in.readByte() == 0) {
+            Id = null;
+        } else {
+            Id = in.readLong();
+        }
+        NewsTitle = in.readString();
+        NewsType = in.readInt();
+        ImageType = in.readInt();
+        NewsSource = in.readString();
+        NewsDate = in.readString();
+        NewsContent = in.readString();
+        if (in.readByte() == 0) {
+            NewsImage = null;
+        } else {
+            NewsImage = in.readInt();
+        }
+    }
+
+    @Generated(hash = 1905642235)
+    public News(Long Id, String NewsTitle, int NewsType, int ImageType,
+            String NewsSource, String NewsDate, String NewsContent,
+            Integer NewsImage) {
         this.Id = Id;
         this.NewsTitle = NewsTitle;
         this.NewsType = NewsType;
+        this.ImageType = ImageType;
         this.NewsSource = NewsSource;
         this.NewsDate = NewsDate;
         this.NewsContent = NewsContent;
@@ -38,18 +69,31 @@ public class News implements MultiItemEntity , Parcelable {
     public News() {
     }
 
-    protected News(Parcel in) {
-        Id = in.readLong();
-        NewsTitle = in.readString();
-        NewsType = in.readInt();
-        NewsSource = in.readString();
-        NewsDate = in.readString();
-        NewsContent = in.readString();
-        if (in.readByte() == 0) {
-            NewsImage = null;
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        if (Id == null) {
+            dest.writeByte((byte) 0);
         } else {
-            NewsImage = in.readInt();
+            dest.writeByte((byte) 1);
+            dest.writeLong(Id);
         }
+        dest.writeString(NewsTitle);
+        dest.writeInt(NewsType);
+        dest.writeInt(ImageType);
+        dest.writeString(NewsSource);
+        dest.writeString(NewsDate);
+        dest.writeString(NewsContent);
+        if (NewsImage == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(NewsImage);
+        }
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<News> CREATOR = new Creator<News>() {
@@ -64,14 +108,18 @@ public class News implements MultiItemEntity , Parcelable {
         }
     };
 
-    public long getId() {
+    @Override
+    public int getItemType() {
+        return ImageType;
+    }
+
+    public Long getId() {
         return this.Id;
     }
 
-    public void setId(long Id) {
+    public void setId(Long Id) {
         this.Id = Id;
     }
-
 
     public String getNewsTitle() {
         return this.NewsTitle;
@@ -87,6 +135,14 @@ public class News implements MultiItemEntity , Parcelable {
 
     public void setNewsType(int NewsType) {
         this.NewsType = NewsType;
+    }
+
+    public int getImageType() {
+        return this.ImageType;
+    }
+
+    public void setImageType(int ImageType) {
+        this.ImageType = ImageType;
     }
 
     public String getNewsSource() {
@@ -119,44 +175,5 @@ public class News implements MultiItemEntity , Parcelable {
 
     public void setNewsImage(Integer NewsImage) {
         this.NewsImage = NewsImage;
-    }
-
-    @Override
-    public int getItemType() {
-        return NewsType;
-    }
-
-    @Override
-    public String toString() {
-        return "News{" +
-                "Id=" + Id +
-                ", NewsTitle='" + NewsTitle + '\'' +
-                ", NewsType=" + NewsType +
-                ", NewsSource='" + NewsSource + '\'' +
-                ", NewsDate='" + NewsDate + '\'' +
-                ", NewsContent='" + NewsContent + '\'' +
-                ", NewsImage=" + NewsImage +
-                '}';
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeLong(Id);
-        dest.writeString(NewsTitle);
-        dest.writeInt(NewsType);
-        dest.writeString(NewsSource);
-        dest.writeString(NewsDate);
-        dest.writeString(NewsContent);
-        if (NewsImage == null) {
-            dest.writeByte((byte) 0);
-        } else {
-            dest.writeByte((byte) 1);
-            dest.writeInt(NewsImage);
-        }
     }
 }

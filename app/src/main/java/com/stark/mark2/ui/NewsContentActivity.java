@@ -2,6 +2,7 @@ package com.stark.mark2.ui;
 
 import android.os.Bundle;
 import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -19,10 +20,15 @@ public class NewsContentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_content);
         webView = findViewById(R.id.web);
-        webView.setWebViewClient(new WebViewClient(){
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setUseWideViewPort(true);
+        webSettings.setLoadWithOverviewMode(true);
+
+
+        webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                view.loadUrl("file:///android_asset/news_1.html");
+                view.loadUrl(url);
                 return true;
             }
         });
@@ -32,7 +38,7 @@ public class NewsContentActivity extends AppCompatActivity {
             if (null != news) {
                 url = news.getNewsContent();
 
-                webView.loadUrl("file:///android_asset/news_1.html");
+                webView.loadUrl(url);
             }
         }
 

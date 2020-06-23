@@ -17,6 +17,7 @@ import com.stark.mark2.databinding.FragmentHomeBinding;
 import com.stark.mark2.ui.home.fragment.NewsFragment;
 import com.stark.mark2.ui.home.fragment.VideoFragment;
 import com.stark.mark2.util.DAOUtils;
+import com.stark.mark2.util.Utils;
 
 import java.util.ArrayList;
 
@@ -43,10 +44,11 @@ public class HomeFragment extends LazyFragment {
     private void initTab() {
         videoFragment= VideoFragment.newInstance() ;
         ArrayList<Fragment> fragments = new ArrayList<>();
-        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getAllNews(getContext()),NewsFragment.BANNER));
-        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getAllNews(getContext()),NewsFragment.NO_BANNER));
-        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getAllNews(getContext()),NewsFragment.NO_BANNER));
-        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getAllNews(getContext()),NewsFragment.NO_BANNER));
+        Utils.LogE(DAOUtils.getInstance().getHomeNews(getContext()).toString());
+        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getHomeNews(getContext()),NewsFragment.BANNER));
+        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getHomeNews(getContext()),NewsFragment.NO_BANNER));
+        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getHomeNews(getContext()),NewsFragment.NO_BANNER));
+        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getHomeNews(getContext()),NewsFragment.NO_BANNER));
         fragments.add(videoFragment);
 
         ArrayList<String> titles = new ArrayList<>();

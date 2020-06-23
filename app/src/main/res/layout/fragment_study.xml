@@ -45,6 +45,7 @@
                     android:src="@mipmap/banner_study" />
 
                 <ImageView
+                    android:id="@+id/img_liang_xue_yi_zuo"
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
