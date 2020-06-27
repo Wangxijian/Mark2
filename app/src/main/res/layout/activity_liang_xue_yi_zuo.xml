@@ -16,7 +16,7 @@
             <ImageView
                 android:id="@+id/img_liang_xue_yi_zuo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="180dp"
                 android:scaleType="fitXY"
                 android:src="@mipmap/study_1" />
 
@@ -30,26 +30,55 @@
                 android:src="@mipmap/back" />
         </FrameLayout>
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab"
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/refreshLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/white"
-            app:tabIndicatorColor="@color/colorPrimary"
-            app:tabMode="scrollable"
-            app:tabSelectedTextColor="@color/colorPrimary"
-            app:tabTextColor="@color/colorPrimary">
+            app:srlPrimaryColor="@color/white"
+            app:srlAccentColor="@color/black"
+            app:srlEnablePreviewInEditMode="true">
+            <!--srlAccentColor srlPrimaryColor 将会改变 Header 和 Footer 的主题颜色-->
+            <!--srlEnablePreviewInEditMode 可以开启和关闭预览功能-->
+            <com.scwang.smart.refresh.header.ClassicsHeader
+                app:srlEnableLastTime="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-        </com.google.android.material.tabs.TabLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+            <com.scwang.smart.refresh.footer.ClassicsFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        <!--<com.google.android.material.tabs.TabLayout-->
+            <!--android:id="@+id/tab"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@color/white"-->
+            <!--app:tabIndicatorColor="@color/colorPrimary"-->
+            <!--app:tabMode="scrollable"-->
+            <!--app:tabSelectedTextColor="@color/colorPrimary"-->
+            <!--app:tabTextColor="@color/colorPrimary">-->
+
+        <!--</com.google.android.material.tabs.TabLayout>-->
 
 
-        <!--内容页-->
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <!--&lt;!&ndash;内容页&ndash;&gt;-->
+        <!--<androidx.viewpager.widget.ViewPager-->
+            <!--android:id="@+id/content"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
 
-        </androidx.viewpager.widget.ViewPager>
+        <!--</androidx.viewpager.widget.ViewPager>-->
 
     </LinearLayout>
 </layout>

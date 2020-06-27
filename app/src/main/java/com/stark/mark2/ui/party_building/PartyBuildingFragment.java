@@ -15,11 +15,9 @@ import com.stark.mark2.adapter.base.FragmentLazyPagerAdapter;
 import com.stark.mark2.base.LazyFragment;
 import com.stark.mark2.bean.News;
 import com.stark.mark2.databinding.FragmentPartyBuildingBinding;
-import com.stark.mark2.ui.home.fragment.NewsFragment;
 import com.stark.mark2.ui.party_building.fragment.PartyBuildingPlusFragment;
 import com.stark.mark2.ui.party_building.fragment.StandardFragment;
 import com.stark.mark2.util.DAOUtils;
-import com.stark.mark2.util.Utils;
 
 import java.util.ArrayList;
 
@@ -45,8 +43,8 @@ public class PartyBuildingFragment extends LazyFragment {
     private void initTab() {
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new StandardFragment());
-        fragments.add(new PartyBuildingPlusFragment());
-        fragments.add(new PartyBuildingPlusFragment());
+        fragments.add(PartyBuildingPlusFragment.newInstance(DAOUtils.getInstance().getNewsByType(getContext(), News.TYPE_NEWS_PARTY_BUILDING_1)));
+        fragments.add(PartyBuildingPlusFragment.newInstance(DAOUtils.getInstance().getNewsByType(getContext(), News.TYPE_NEWS_PARTY_BUILDING_2)));
 
 
         ArrayList<String> titles = new ArrayList<>();

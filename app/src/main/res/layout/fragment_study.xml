@@ -43,18 +43,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/banner_study" />
+                <ImageView
+                    android:scaleType="fitXY"
+                    android:id="@+id/img_bu_wang_chu_xin"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:src="@mipmap/study_0" />
 
                 <ImageView
+                    android:scaleType="fitXY"
                     android:id="@+id/img_liang_xue_yi_zuo"
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="160dp"
                     android:src="@mipmap/study_1" />
 
                 <ImageView
+                    android:scaleType="fitXY"
+                    android:id="@+id/img_san_hui_yi_ke"
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="160dp"
                     android:src="@mipmap/study_2" />
 
             </LinearLayout>

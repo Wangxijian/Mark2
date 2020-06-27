@@ -10,13 +10,24 @@ import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Generated;
 
 @Entity
-public class News implements MultiItemEntity , Parcelable {
+public class News implements MultiItemEntity, Parcelable {
     public static final int TYPE_IMAGE_NORMAL = 0;
     public static final int TYPE_IMAGE_NO_IMAGE = 1;
 
-    public static final int TYPE_NEWS_HOME = 0;
-    public static final int TYPE_NEWS_PARTY_BUILDING = 1;
+    public static final int TYPE_NEWS_HOME_1 = 0;
+    public static final int TYPE_NEWS_HOME_2 = 1;
+    public static final int TYPE_NEWS_HOME_3 = 2;
+    public static final int TYPE_NEWS_HOME_4 = 3;
+    public static final int TYPE_NEWS_PARTY_BUILDING_1 = 4;
+    public static final int TYPE_NEWS_PARTY_BUILDING_2 = 5;
 
+
+
+    public static final int TYPE_NEWS_STUDY_1 = 6;
+    public static final int TYPE_NEWS_STUDY_2 = 7;
+    public static final int TYPE_NEWS_STUDY_3 = 8;
+    public static final int TYPE_NEWS_MANAGEMENT_1 = 9;
+    public static final int TYPE_NEWS_VIDEO = 10;
 
     @Id
     private Long Id;
@@ -27,9 +38,6 @@ public class News implements MultiItemEntity , Parcelable {
     private String NewsDate;
     private String NewsContent;
     private Integer NewsImage;
-
-
-
 
 
     protected News(Parcel in) {
@@ -53,8 +61,8 @@ public class News implements MultiItemEntity , Parcelable {
 
     @Generated(hash = 1905642235)
     public News(Long Id, String NewsTitle, int NewsType, int ImageType,
-            String NewsSource, String NewsDate, String NewsContent,
-            Integer NewsImage) {
+                String NewsSource, String NewsDate, String NewsContent,
+                Integer NewsImage) {
         this.Id = Id;
         this.NewsTitle = NewsTitle;
         this.NewsType = NewsType;
@@ -67,6 +75,18 @@ public class News implements MultiItemEntity , Parcelable {
 
     @Generated(hash = 1579685679)
     public News() {
+    }
+
+    public News( String NewsTitle, int NewsType, int ImageType,
+                String NewsSource, String NewsDate, String NewsContent,
+                Integer NewsImage) {
+        this.NewsTitle = NewsTitle;
+        this.NewsType = NewsType;
+        this.ImageType = ImageType;
+        this.NewsSource = NewsSource;
+        this.NewsDate = NewsDate;
+        this.NewsContent = NewsContent;
+        this.NewsImage = NewsImage;
     }
 
     @Override

@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import com.stark.mark2.R;
 import com.stark.mark2.adapter.base.FragmentLazyPagerAdapter;
 import com.stark.mark2.base.LazyFragment;
+import com.stark.mark2.bean.News;
 import com.stark.mark2.databinding.FragmentHomeBinding;
 import com.stark.mark2.ui.home.fragment.NewsFragment;
 import com.stark.mark2.ui.home.fragment.VideoFragment;
@@ -45,10 +46,10 @@ public class HomeFragment extends LazyFragment {
         videoFragment= VideoFragment.newInstance() ;
         ArrayList<Fragment> fragments = new ArrayList<>();
         Utils.LogE(DAOUtils.getInstance().getHomeNews(getContext()).toString());
-        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getHomeNews(getContext()),NewsFragment.BANNER));
-        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getHomeNews(getContext()),NewsFragment.NO_BANNER));
-        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getHomeNews(getContext()),NewsFragment.NO_BANNER));
-        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getHomeNews(getContext()),NewsFragment.NO_BANNER));
+        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getNewsByType(getContext(), News.TYPE_NEWS_HOME_1),NewsFragment.BANNER));
+        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getNewsByType(getContext(), News.TYPE_NEWS_HOME_2),NewsFragment.NO_BANNER));
+        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getNewsByType(getContext(), News.TYPE_NEWS_HOME_3),NewsFragment.NO_BANNER));
+        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getNewsByType(getContext(), News.TYPE_NEWS_HOME_4),NewsFragment.NO_BANNER));
         fragments.add(videoFragment);
 
         ArrayList<String> titles = new ArrayList<>();
@@ -64,10 +65,6 @@ public class HomeFragment extends LazyFragment {
         mBinding.tab.setupWithViewPager(mBinding.content);
 
 
-    }
-
-    public boolean onBackPressed(){
-        return videoFragment.onBackPressed();
     }
 
 

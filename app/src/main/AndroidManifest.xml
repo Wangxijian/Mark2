@@ -17,7 +17,13 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".ui.party_affairs_management.OrganizationActivity"></activity>
+        <activity android:name=".ui.study.BuWangChuXinActivity"></activity>
+        <activity
+            android:name=".ui.home.VideoActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.study.SanHuiYiKeActivity" />
+        <activity android:name=".ui.party_affairs_management.OrganizationActivity" />
         <activity android:name=".ui.study.LiangXueYiZuoActivity" />
         <activity android:name=".ui.NewsContentActivity" />
         <activity android:name=".ui.MainActivity">

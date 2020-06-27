@@ -11,6 +11,7 @@ import com.stark.mark2.adapter.base.FragmentLazyPagerAdapter;
 import com.stark.mark2.bean.News;
 import com.stark.mark2.databinding.ActivityOrganizationBinding;
 import com.stark.mark2.ui.home.fragment.NewsFragment;
+import com.stark.mark2.ui.party_affairs_management.fragment.GroupFragment;
 import com.stark.mark2.ui.party_affairs_management.fragment.MemberFragment;
 import com.stark.mark2.util.DAOUtils;
 
@@ -34,8 +35,8 @@ public class OrganizationActivity extends FragmentActivity {
 
         ArrayList<Fragment> fragments = new ArrayList<>();
 
-        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getNewsByType(this, News.TYPE_NEWS_PARTY_BUILDING),NewsFragment.NO_BANNER));
-        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getNewsByType(this, News.TYPE_NEWS_PARTY_BUILDING),NewsFragment.NO_BANNER));
+        fragments.add(new GroupFragment());
+        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getNewsByType(this, News.TYPE_NEWS_MANAGEMENT_1),NewsFragment.NO_BANNER));
         fragments.add(new MemberFragment());
 
 

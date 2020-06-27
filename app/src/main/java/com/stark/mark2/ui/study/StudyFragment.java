@@ -31,9 +31,21 @@ public class StudyFragment extends LazyFragment {
 
     @Override
     public void init() {
+        mBinding.imgBuWangChuXin.setOnClickListener(v -> {
+            if (null != getActivity()) {
+                Intent i = new Intent(getActivity(), BuWangChuXinActivity.class);
+                getActivity().startActivity(i);
+            }
+        });
         mBinding.imgLiangXueYiZuo.setOnClickListener(v -> {
             if (null != getActivity()) {
                 Intent i = new Intent(getActivity(), LiangXueYiZuoActivity.class);
+                getActivity().startActivity(i);
+            }
+        });
+        mBinding.imgSanHuiYiKe.setOnClickListener(v -> {
+            if (null != getActivity()) {
+                Intent i = new Intent(getActivity(), SanHuiYiKeActivity.class);
                 getActivity().startActivity(i);
             }
         });

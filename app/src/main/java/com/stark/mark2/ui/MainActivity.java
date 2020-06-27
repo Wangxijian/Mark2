@@ -140,11 +140,5 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        if (homeFragment.onBackPressed()) {
-            return;
-        }
-        finish();
-    }
+
 }

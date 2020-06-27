@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -20,8 +19,8 @@ import com.stark.mark2.base.LazyFragment;
 import com.stark.mark2.bean.News;
 import com.stark.mark2.databinding.FragmentPartyBuildingPlusBinding;
 import com.stark.mark2.ui.NewsContentActivity;
-import com.stark.mark2.util.DAOUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -29,6 +28,7 @@ public class PartyBuildingPlusFragment extends LazyFragment implements OnItemCli
 
     private FragmentPartyBuildingPlusBinding mBinding;
     private List<News> dataList;
+    private static final String ARG_DATA_LIST = "ARG_DATA_LIST";
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -37,20 +37,34 @@ public class PartyBuildingPlusFragment extends LazyFragment implements OnItemCli
         return mBinding.getRoot();
     }
 
+
+    public static PartyBuildingPlusFragment newInstance(ArrayList<News> dataList) {
+        PartyBuildingPlusFragment fragment = new PartyBuildingPlusFragment();
+        Bundle args = new Bundle();
+        args.putParcelableArrayList(ARG_DATA_LIST, dataList);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public void init() {
-        NewsAdapter newsAdapter = new NewsAdapter();
-        mBinding.refreshLayout.setOnLoadMoreListener(refreshLayout -> refreshLayout.finishLoadMore(2000));
-        mBinding.refreshLayout.setOnRefreshListener(refreshLayout -> refreshLayout.finishRefresh(2000));
+        if (getArguments() != null) {
+            dataList = getArguments().getParcelableArrayList(ARG_DATA_LIST);
 
-        mBinding.rv.setLayoutManager(new LinearLayoutManager(getContext()));
-        mBinding.rv.setAdapter(newsAdapter);
-        dataList = DAOUtils.getInstance().getNewsByType(getContext(), News.TYPE_NEWS_PARTY_BUILDING);
 
-        newsAdapter.setOnItemClickListener(this);
-        
+            NewsAdapter newsAdapter = new NewsAdapter();
+            mBinding.refreshLayout.setOnLoadMoreListener(refreshLayout -> refreshLayout.finishLoadMore(2000));
+            mBinding.refreshLayout.setOnRefreshListener(refreshLayout -> refreshLayout.finishRefresh(2000));
 
-        newsAdapter.setList(dataList);
+            mBinding.rv.setLayoutManager(new LinearLayoutManager(getContext()));
+            mBinding.rv.setAdapter(newsAdapter);
+
+
+            newsAdapter.setOnItemClickListener(this);
+
+
+            newsAdapter.setList(dataList);
+        }
     }
 
 
