@@ -17,13 +17,11 @@ public class NewsAdapter extends BaseMultiItemQuickAdapter<News, BaseViewHolder>
         addItemType(News.TYPE_IMAGE_NORMAL, R.layout.item_news);
     }
 
+
     public NewsAdapter(@Nullable List<News> data) {
         super(data);
 
     }
-
-
-
     @Override
     protected void convert(@NotNull BaseViewHolder holder, News news) {
         switch (holder.getItemViewType()) {
@@ -40,11 +38,4 @@ public class NewsAdapter extends BaseMultiItemQuickAdapter<News, BaseViewHolder>
                 break;
         }
     }
-
-
-//    @Override
-//    protected void convert(@NotNull BaseViewHolder holder, News news) {
-
-//    }
-
 }

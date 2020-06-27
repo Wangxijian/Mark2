@@ -11,7 +11,7 @@ public class FragmentUtils {
 
     public static void loadFragmentsTransaction(int viewID, int position, FragmentManager manager, List<Fragment> fragments) {
         FragmentTransaction transaction = manager.beginTransaction();
-        Utils.LogE("AAA"+viewID);
+
         for (int i = 0; i < fragments.size(); i++) {
             Fragment fragment = fragments.get(i);
             transaction.add(viewID, fragment, fragment.getClass().getName());

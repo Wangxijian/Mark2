@@ -25,6 +25,6 @@ public class UserFragment extends LazyFragment {
 
     @Override
     public void init() {
-        Utils.LogE("UserFragment");
+
     }
 }

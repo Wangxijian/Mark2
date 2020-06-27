@@ -16,6 +16,7 @@ import com.stark.mark2.base.LazyFragment;
 import com.stark.mark2.bean.News;
 import com.stark.mark2.databinding.FragmentPartyBuildingBinding;
 import com.stark.mark2.ui.home.fragment.NewsFragment;
+import com.stark.mark2.ui.party_building.fragment.PartyBuildingPlusFragment;
 import com.stark.mark2.ui.party_building.fragment.StandardFragment;
 import com.stark.mark2.util.DAOUtils;
 import com.stark.mark2.util.Utils;
@@ -37,7 +38,6 @@ public class PartyBuildingFragment extends LazyFragment {
 
     @Override
     public void init() {
-        Utils.LogE("PartyBuildingFragment");
         initTab();
     }
 
@@ -45,8 +45,8 @@ public class PartyBuildingFragment extends LazyFragment {
     private void initTab() {
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new StandardFragment());
-        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getNewsByType(getContext(), News.TYPE_NEWS_PARTY_BUILDING), NewsFragment.NO_BANNER));
-        fragments.add(NewsFragment.newInstance(DAOUtils.getInstance().getNewsByType(getContext(), News.TYPE_NEWS_PARTY_BUILDING), NewsFragment.NO_BANNER));
+        fragments.add(new PartyBuildingPlusFragment());
+        fragments.add(new PartyBuildingPlusFragment());
 
 
         ArrayList<String> titles = new ArrayList<>();

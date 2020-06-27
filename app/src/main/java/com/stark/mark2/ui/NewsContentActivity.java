@@ -8,8 +8,10 @@ import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.util.Util;
 import com.stark.mark2.R;
 import com.stark.mark2.bean.News;
+import com.stark.mark2.util.Utils;
 
 public class NewsContentActivity extends AppCompatActivity {
     WebView webView;
@@ -37,7 +39,7 @@ public class NewsContentActivity extends AppCompatActivity {
             News news = bundle.getParcelable("News");
             if (null != news) {
                 url = news.getNewsContent();
-
+                Utils.LogE(url);
                 webView.loadUrl(url);
             }
         }
