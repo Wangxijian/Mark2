@@ -18,6 +18,8 @@ import com.stark.mark2.R;
 import com.stark.mark2.base.LazyFragment;
 import com.stark.mark2.databinding.FragmentStandardBinding;
 
+import static android.webkit.WebSettings.TextSize.LARGER;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -39,7 +41,7 @@ public class StandardFragment extends LazyFragment {
         WebSettings webSettings = mBinding.web.getSettings();
         webSettings.setUseWideViewPort(true);
         webSettings.setLoadWithOverviewMode(true);
-
+        webSettings.setTextSize(LARGER);
 
         mBinding.web.setWebViewClient(new WebViewClient() {
             @Override

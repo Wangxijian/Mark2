@@ -65,65 +65,43 @@ public class DAOUtils {
 
     public static List<News> generateHomeNewsData1() {
         List<News> list = new ArrayList<>();
-
-
-        list.add(new News("矩衡党支部书记罗金云参加省委常委、组织部部长王正谱调研的律师行业党建工作座谈会并作专题汇报发言",
-                News.TYPE_NEWS_HOME_1,
-                News.TYPE_IMAGE_NORMAL,
-                "矩衡党支部",
-                "2020年4月21日",
-                "http://www.juhenglawfirm.com/contents/84/3460.html",
-                R.mipmap.news_1));
-
-        list.add(new News("天使在前 我们同行 ---战“疫”时刻，矩衡党员律师在行动",
+        list.add(new News("习近平谈实现中华民族伟大复兴的中国梦",
                 News.TYPE_NEWS_HOME_1,
                 News.TYPE_IMAGE_NO_IMAGE,
-                "矩衡党支部",
-                "2020年4月21日",
-                "http://www.juhenglawfirm.com/contents/84/3459.html",
+                "党建网微平台",
+                "2020年06月28日",
+                "http://www.dangjian.cn/shouye/dangjianyaowen/202006/t20200628_5688564.shtml",
                 0));
-
-        list.add(new News("矩衡资讯 | 矩衡党支部荣获五星级“两新”组织党组织称号",
-                News.TYPE_NEWS_HOME_1,
-                News.TYPE_IMAGE_NORMAL,
-                "矩衡党支部",
-                "2020年2月12日",
-                "http://www.juhenglawfirm.com/contents/84/2658.html",
-                R.mipmap.news_3));
-
-        list.add(new News("全国律师行业“不忘初心、牢记使命”主题教育第四巡回指导组一行莅临矩衡律师事务所调研指导工作",
+        list.add(new News("从民法典观习近平眼中的“中国之治”",
                 News.TYPE_NEWS_HOME_1,
                 News.TYPE_IMAGE_NO_IMAGE,
-                "矩衡党支部",
-                "2020年2月12日",
-                "http://www.juhenglawfirm.com/contents/84/2656.html",
+                "党建网微平台",
+                "2020年06月28日",
+                "http://www.dangjian.com/shouye/dangjianyaowen/202006/t20200628_5688412.shtml",
                 0));
 
-        list.add(new News("盛世华诞 | 矩衡律师事务所为祖国母亲献歌贺生",
+        list.add(new News("习近平要求全党同志坚持“三个不动摇”",
                 News.TYPE_NEWS_HOME_1,
-                News.TYPE_IMAGE_NORMAL,
-                "矩衡党支部",
-                "2020年2月12日",
-                "http://www.juhenglawfirm.com/contents/84/2657.html",
-                R.mipmap.news_4));
-
-
-        list.add(new News("矩衡律所党支部宣传委员魏玥律师参加金牛区9月“两新”组织固定党日活动",
+                News.TYPE_IMAGE_NO_IMAGE,
+                "党建网微平台",
+                "2020年06月24日",
+                "http://www.dangjian.com/shouye/dangjianyaowen/202006/t20200624_5685901.shtml",
+                0));
+        list.add(new News("实施好民法典 习近平总书记提出五个“加强”",
                 News.TYPE_NEWS_HOME_1,
-                News.TYPE_IMAGE_NORMAL,
-                "矩衡党支部",
-                "2020年2月12日",
-                "http://www.juhenglawfirm.com/contents/84/2653.html",
-                R.mipmap.news_5));
+                News.TYPE_IMAGE_NO_IMAGE,
+                "党建网微平台",
+                "2020年06月15日",
+                "http://www.qstheory.cn/zhuanqu/tujie/2020-06/15/c_1126117809.htm",
+                0));
 
-        list.add(new News("矩衡律师事务所党支部召开“不忘初心、牢记使命”主题教育动员部署会",
+        list.add(new News("砥砺奋进当鼓“气”",
                 News.TYPE_NEWS_HOME_1,
-                News.TYPE_IMAGE_NORMAL,
-                "矩衡党支部",
-                "2020年2月12日",
-                "http://www.juhenglawfirm.com/contents/84/2655.html",
-                R.mipmap.news_6));
-
+                News.TYPE_IMAGE_NO_IMAGE,
+                "党建网微平台",
+                "2020年06月28日",
+                "http://www.dangjian.cn/shouye/dangjianyaowen/202006/t20200628_5688335.shtml",
+                0));
 
         return list;
     }
@@ -131,63 +109,28 @@ public class DAOUtils {
     public static List<News> generateHomeNewsData2() {
         List<News> list = new ArrayList<>();
 
-
-        list.add(new News("矩衡公益 | 大疆有域·爱心无垠，矩衡“以爱之名”第六站之走进白玉县章都乡小学",
-                News.TYPE_NEWS_HOME_2,
-                News.TYPE_IMAGE_NORMAL,
-                "矩衡党支部",
-                "2020年4月21日",
-                "http://www.juhenglawfirm.com/contents/1093/2650.html",
-                R.mipmap.news_7));
-
-        list.add(new News("矩衡公益 | 让我们以“爱”之名行动起来--系列公益活动之走进阿坝 矩衡律师",
+        list.add(new News("强化担当只争朝夕推动各项任务落地见效 为全面建成小康社会夯实法治基础",
                 News.TYPE_NEWS_HOME_2,
                 News.TYPE_IMAGE_NO_IMAGE,
-                "矩衡党支部",
-                "2020年4月21日",
-                "http://www.juhenglawfirm.com/contents/1093/2637.html",
+                "司法部政府网",
+                "2020年06月09日",
+                "http://112.74.112.46:9999/news_2_1.html",
                 0));
 
-        list.add(new News("矩衡公益 | “以爱之名”系列公益活动-爱心永传递！",
+        list.add(new News("两会内外，习近平这样谈全面依法治国",
                 News.TYPE_NEWS_HOME_2,
                 News.TYPE_IMAGE_NO_IMAGE,
-                "矩衡党支部",
-                "2020年2月12日",
-                "http://www.juhenglawfirm.com/contents/1093/2640.html",
+                "新华网",
+                "2020年05月27日",
+                "http://112.74.112.46:9999/news_2_2.html",
                 0));
-
-        list.add(new News("情系山区贫困学子 传递真情助力成长",
-                News.TYPE_NEWS_HOME_2,
-                News.TYPE_IMAGE_NO_IMAGE,
-                "矩衡党支部",
-                "2020年2月12日",
-                "http://www.juhenglawfirm.com/contents/1093/2641.html",
-                0));
-
-        list.add(new News("矩衡·祥瑞走进吉福社区，开展“ 世界艾滋病日”法律宣传活动",
-                News.TYPE_NEWS_HOME_2,
-                News.TYPE_IMAGE_NO_IMAGE,
-                "矩衡党支部",
-                "2020年2月12日",
-                "http://www.juhenglawfirm.com/contents/1093/2642.html",
-                0));
-
-
-        list.add(new News("矩衡•祥瑞走进育苗路社区，扎实推进“法律七进”之进社区活动",
-                News.TYPE_NEWS_HOME_2,
-                News.TYPE_IMAGE_NO_IMAGE,
-                "矩衡党支部",
-                "2020年2月12日",
-                "http://www.juhenglawfirm.com/contents/1093/2643.html",
-                0));
-
-        list.add(new News("矩衡•祥瑞走进得胜社区，扎实推进“法律七进”之进社区活动",
-                News.TYPE_NEWS_HOME_2,
-                News.TYPE_IMAGE_NO_IMAGE,
-                "矩衡党支部",
-                "2020年2月12日",
-                "http://www.juhenglawfirm.com/contents/1093/2644.html",
-                0));
+//        list.add(new News("做实“两新”党建，创新方式方法 | 组织部长这样说",
+//                News.TYPE_NEWS_HOME_2,
+//                News.TYPE_IMAGE_NO_IMAGE,
+//                "成都两新党建",
+//                "2020年04月02日",
+//                "http://112.74.112.46:9999/news_2_3.html",
+//                0));
 
 
         return list;
@@ -196,6 +139,123 @@ public class DAOUtils {
     public static List<News> generateHomeNewsData3() {
         List<News> list = new ArrayList<>();
 
+        list.add(new News("矩衡党支部书记罗金云参加省委常委、组织部部长王正谱调研的律师行业党建工作座谈会并作专题汇报发言",
+                News.TYPE_NEWS_HOME_3,
+                News.TYPE_IMAGE_NORMAL,
+                "矩衡党支部",
+                "2020年4月21日",
+                "http://www.juhenglawfirm.com/contents/84/3460.html",
+                R.mipmap.news_1));
+
+        list.add(new News("天使在前 我们同行 ---战“疫”时刻，矩衡党员律师在行动",
+                News.TYPE_NEWS_HOME_3,
+                News.TYPE_IMAGE_NO_IMAGE,
+                "矩衡党支部",
+                "2020年4月21日",
+                "http://www.juhenglawfirm.com/contents/84/3459.html",
+                0));
+
+        list.add(new News("矩衡资讯 | 矩衡党支部荣获五星级“两新”组织党组织称号",
+                News.TYPE_NEWS_HOME_3,
+                News.TYPE_IMAGE_NORMAL,
+                "矩衡党支部",
+                "2020年2月12日",
+                "http://www.juhenglawfirm.com/contents/84/2658.html",
+                R.mipmap.news_3));
+
+        list.add(new News("全国律师行业“不忘初心、牢记使命”主题教育第四巡回指导组一行莅临矩衡律师事务所调研指导工作",
+                News.TYPE_NEWS_HOME_3,
+                News.TYPE_IMAGE_NO_IMAGE,
+                "矩衡党支部",
+                "2019年11月05日",
+                "http://www.juhenglawfirm.com/contents/84/2656.html",
+                0));
+
+        list.add(new News("盛世华诞 | 矩衡律师事务所为祖国母亲献歌贺生",
+                News.TYPE_NEWS_HOME_3,
+                News.TYPE_IMAGE_NORMAL,
+                "矩衡党支部",
+                "2019年10月15日",
+                "http://www.juhenglawfirm.com/contents/84/2657.html",
+                R.mipmap.news_4));
+
+
+        list.add(new News("矩衡律所党支部宣传委员魏玥律师参加金牛区9月“两新”组织固定党日活动",
+                News.TYPE_NEWS_HOME_3,
+                News.TYPE_IMAGE_NORMAL,
+                "矩衡党支部",
+                "2019年10月15日",
+                "http://www.juhenglawfirm.com/contents/84/2653.html",
+                R.mipmap.news_5));
+
+        list.add(new News("矩衡律师事务所党支部召开“不忘初心、牢记使命”主题教育动员部署会",
+                News.TYPE_NEWS_HOME_3,
+                News.TYPE_IMAGE_NORMAL,
+                "矩衡党支部",
+                "2019年09月27日",
+                "http://www.juhenglawfirm.com/contents/84/2655.html",
+                R.mipmap.news_6));
+        ////////////////////////////////////////////
+
+        list.add(new News("矩衡公益 | 大疆有域·爱心无垠，矩衡“以爱之名”第六站之走进白玉县章都乡小学",
+                News.TYPE_NEWS_HOME_3,
+                News.TYPE_IMAGE_NORMAL,
+                "矩衡党支部",
+                "2019年11月15日",
+                "http://www.juhenglawfirm.com/contents/1093/2650.html",
+                R.mipmap.news_7));
+
+        list.add(new News("矩衡公益 | 让我们以“爱”之名行动起来--系列公益活动之走进阿坝 矩衡律师",
+                News.TYPE_NEWS_HOME_3,
+                News.TYPE_IMAGE_NO_IMAGE,
+                "矩衡党支部",
+                "2019年10月21日",
+                "http://www.juhenglawfirm.com/contents/1093/2637.html",
+                0));
+
+        list.add(new News("矩衡公益 | “以爱之名”系列公益活动-爱心永传递！",
+                News.TYPE_NEWS_HOME_3,
+                News.TYPE_IMAGE_NO_IMAGE,
+                "矩衡党支部",
+                "2019年10月17日",
+                "http://www.juhenglawfirm.com/contents/1093/2640.html",
+                0));
+
+        list.add(new News("情系山区贫困学子 传递真情助力成长",
+                News.TYPE_NEWS_HOME_3,
+                News.TYPE_IMAGE_NO_IMAGE,
+                "矩衡党支部",
+                "2019年10月17日",
+                "http://www.juhenglawfirm.com/contents/1093/2641.html",
+                0));
+
+        list.add(new News("矩衡·祥瑞走进吉福社区，开展“ 世界艾滋病日”法律宣传活动",
+                News.TYPE_NEWS_HOME_3,
+                News.TYPE_IMAGE_NO_IMAGE,
+                "矩衡党支部",
+                "2019年10月17日",
+                "http://www.juhenglawfirm.com/contents/1093/2642.html",
+                0));
+
+
+        list.add(new News("矩衡•祥瑞走进育苗路社区，扎实推进“法律七进”之进社区活动",
+                News.TYPE_NEWS_HOME_3,
+                News.TYPE_IMAGE_NO_IMAGE,
+                "矩衡党支部",
+                "2019年10月17日",
+                "http://www.juhenglawfirm.com/contents/1093/2643.html",
+                0));
+
+        list.add(new News("矩衡•祥瑞走进得胜社区，扎实推进“法律七进”之进社区活动",
+                News.TYPE_NEWS_HOME_3,
+                News.TYPE_IMAGE_NO_IMAGE,
+                "矩衡党支部",
+                "2019年10月17日",
+                "http://www.juhenglawfirm.com/contents/1093/2644.html",
+                0));
+
+
+/////////////////////////////////////////
 
         list.add(new News("矩衡资讯 | 矩衡与四川师范大学共建法学实践教学基地，并设立“矩衡律师励志奖学金”",
                 News.TYPE_NEWS_HOME_3,

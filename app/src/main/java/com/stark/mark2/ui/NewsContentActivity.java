@@ -8,10 +8,11 @@ import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.util.Util;
 import com.stark.mark2.R;
 import com.stark.mark2.bean.News;
 import com.stark.mark2.util.Utils;
+
+import static android.webkit.WebSettings.TextSize.LARGER;
 
 public class NewsContentActivity extends AppCompatActivity {
     WebView webView;
@@ -26,7 +27,7 @@ public class NewsContentActivity extends AppCompatActivity {
         webSettings.setUseWideViewPort(true);
         webSettings.setLoadWithOverviewMode(true);
 
-
+        webSettings.setTextSize(LARGER);
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
