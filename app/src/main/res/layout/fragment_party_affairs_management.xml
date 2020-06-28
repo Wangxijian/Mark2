@@ -52,6 +52,7 @@
                     android:src="@mipmap/management_1" />
 
                 <ImageView
+                    android:id="@+id/img_party_fee_payment"
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

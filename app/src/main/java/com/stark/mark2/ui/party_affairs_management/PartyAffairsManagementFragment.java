@@ -35,6 +35,14 @@ public class PartyAffairsManagementFragment extends LazyFragment {
                 getActivity().startActivity(i);
             }
         });
+
+        mBinding.imgPartyFeePayment.setOnClickListener(v -> {
+            if (null != getActivity()) {
+                Intent i = new Intent(getActivity(), PartyFeePaymentActivity.class);
+                getActivity().startActivity(i);
+            }
+        });
+
     }
 
 }

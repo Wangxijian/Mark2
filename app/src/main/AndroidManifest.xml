@@ -17,7 +17,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".ui.study.BuWangChuXinActivity"></activity>
+        <activity android:name=".ui.party_affairs_management.PartyFeePaymentActivity"></activity>
+        <activity android:name=".ui.study.BuWangChuXinActivity" />
         <activity
             android:name=".ui.home.VideoActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
